@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: kegf4mlml-nodejs-gitops
+  description: This is GitOps manifest for kegf4mlml-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=kegf4mlml-nodejs
+    backstage.io/kubernetes-id: kegf4mlml-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: kegf4mlml-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:kegf4mlml-nodejs
